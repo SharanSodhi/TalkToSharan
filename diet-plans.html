@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Diet Plans - Talk to Sharan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-image: url('https://images.unsplash.com/photo-1490818387583-1baba5e638af?auto=format&fit=crop&w=1920');
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+    }
+    .overlay {
+      background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.92), rgba(240, 253, 244, 0.95));
+    }
+    .plan-card {
+      transition: all 0.3s ease;
+      transform-style: preserve-3d;
+      perspective: 1000px;
+    }
+    .plan-card:hover {
+      transform: translateY(-10px) rotateX(5deg);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay min-h-screen">
+    <header class="bg-white/95 border-b border-gray-300 sticky top-0 z-50">
+      <div class="container mx-auto flex items-center justify-between py-4 px-6">
+        <a href="index.html" class="flex items-center space-x-3">
+          <img src="logo.png" alt="Talk to Sharan Logo" class="h-12 w-auto" />
+          <span class="text-2xl font-semibold text-green-800">Talk to Sharan</span>
+        </a>
+        <nav class="space-x-6 text-lg font-medium">
+          <a href="index.html" class="text-green-800 hover:text-green-600">Home</a>
+          <a href="diet-plans.html" class="text-green-800 font-semibold underline">Diet Plans</a>
+          <a href="appointment.html" class="text-green-800 hover:text-green-600">Book Appointment</a>
+          <a href="about.html" class="text-green-800 hover:text-green-600">About</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+      <h1 class="text-4xl font-extrabold mb-10 text-center text-green-800 bg-white/80 backdrop-blur-sm rounded-lg p-6 shadow-lg">Diet Plans Offered</h1>
+
+      <!-- Plan Cards Grid -->
+      <div class="grid lg:grid-cols-4 md:grid-cols-2 gap-8 mb-12">
+        <!-- Free Trial Plan -->
+        <section class="plan-card bg-white/90 backdrop-blur-sm rounded-lg p-8 shadow-lg border-t-4 border-blue-400">
+          <div class="absolute top-0 right-0 bg-blue-500 text-white px-3 py-1 rounded-bl-lg rounded-tr-lg text-sm font-semibold">Free Trial</div>
+          <h2 class="text-2xl font-bold mb-2 text-green-800">🆓 7-Day Trial</h2>
+          <p class="text-3xl font-bold mb-4 text-green-700">FREE<span class="text-lg font-normal text-gray-600">/7 days</span></p>
+          <p class="italic mb-4 text-green-600">"Wellness Kickstart"</p>
+          <p class="mb-4 text-gray-700">
+            Perfect for trying out our approach with no commitment.
+          </p>
+          <p class="font-semibold mb-2 text-green-700">Includes:</p>
+          <ul class="list-disc list-inside text-gray-700 space-y-2 mb-6">
+            <li>1 personalized meal plan for the week</li>
+            <li>Basic grocery list</li>
+            <li>1 welcome video/email with getting-started guide</li>
+            <li>Tips on hydration, mindful eating, or prepping</li>
+            <li>No live support</li>
+          </ul>
+          <a href="appointment.html?plan=free-trial" class="block text-center bg-blue-600 text-white px-6 py-3 rounded-md font-semibold hover:bg-blue-500 transition shadow-lg hover:shadow-xl transform hover:-translate-y-1">Start Free Trial</a>
+        </section>
+
+        <!-- Basic Plan -->
+        <section class="plan-card bg-white/90 backdrop-blur-sm rounded-lg p-8 shadow-lg border-t-4 border-green-400">
+          <h2 class="text-2xl font-bold mb-2 text-green-800">🥗 Basic Plan</h2>
+          <p class="text-3xl font-bold mb-4 text-green-700">$9.99<span class="text-lg font-normal text-gray-600">/month</span><span class="text-sm text-gray-500">*</span></p>
+          <p class="italic mb-4 text-green-600">"Self-Starter"</p>
+          <p class="mb-4 text-gray-700">
+            Perfect for individuals who need basic guidance and want to begin their nutrition journey independently.
+          </p>
+          <p class="font-semibold mb-2 text-green-700">Includes:</p>
+          <ul class="list-disc list-inside text-gray-700 space-y-2 mb-6">
+            <li>1 personalized meal plan/month (PDF)</li>
+            <li>General grocery list</li>
+            <li>Access to monthly newsletter</li>
+            <li>Email support (3-4 business days)</li>
+            <li>Access to private community/forum</li>
+          </ul>
+          <a href="appointment.html?plan=basic" class="block text-center bg-green-600 text-white px-6 py-3 rounded-md font-semibold hover:bg-green-500 transition shadow-lg hover:shadow-xl transform hover:-translate-y-1">Get Started</a>
+        </section>
+
+        <!-- Standard Plan -->
+        <section class="plan-card bg-white/90 backdrop-blur-sm rounded-lg p-8 shadow-lg border-t-4 border-green-600 relative">
+          <div class="absolute top-0 right-0 bg-green-600 text-white px-3 py-1 rounded-bl-lg rounded-tr-lg text-sm font-semibold">Popular Choice</div>
+          <h2 class="text-2xl font-bold mb-2 text-green-800">🥑 Standard Plan</h2>
+          <p class="text-3xl font-bold mb-4 text-green-700">$17.99<span class="text-lg font-normal text-gray-600">/month</span><span class="text-sm text-gray-500">*</span></p>
+          <p class="italic mb-4 text-green-600">"Guided Journey"</p>
+          <p class="mb-4 text-gray-700">
+            Ideal for those who want regular support and moderate customization to stay on track.
+          </p>
+          <p class="font-semibold mb-2 text-green-700">Includes:</p>
+          <ul class="list-disc list-inside text-gray-700 space-y-2 mb-6">
+            <li>2 customized meal plans/month</li>
+            <li>Weekly nutrition tips and recipes</li>
+            <li>Updated grocery list with substitutions</li>
+            <li>Monthly progress review</li>
+            <li>Priority email support (24–48 hrs)</li>
+            <li>Access to monthly Q&A webinar</li>
+          </ul>
+          <a href="appointment.html?plan=standard" class="block text-center bg-green-600 text-white px-6 py-3 rounded-md font-semibold hover:bg-green-500 transition shadow-lg hover:shadow-xl transform hover:-translate-y-1">Get Started</a>
+        </section>
+
+        <!-- Premium Plan -->
+        <section class="plan-card bg-white/90 backdrop-blur-sm rounded-lg p-8 shadow-lg border-t-4 border-green-800">
+          <h2 class="text-2xl font-bold mb-2 text-green-800">🥦 Premium Plan</h2>
+          <p class="text-3xl font-bold mb-4 text-green-700">$24.99<span class="text-lg font-normal text-gray-600">/month</span><span class="text-sm text-gray-500">*</span></p>
+          <p class="italic mb-4 text-green-600">"Full Support"</p>
+          <p class="mb-4 text-gray-700">
+            Best for clients looking for accountability, detailed tracking, and direct expert access.
+          </p>
+          <p class="font-semibold mb-2 text-green-700">Includes:</p>
+          <ul class="list-disc list-inside text-gray-700 space-y-2 mb-6">
+            <li>Weekly customized meal plans</li>
+            <li>Weekly 15-min virtual check-ins</li>
+            <li>Food diary feedback (1x/week)</li>
+            <li>Unlimited email support (24 hrs)</li>
+            <li>Access to premium content</li>
+            <li>Priority access to workshops</li>
+            <li>Exclusive Q&A sessions</li>
+          </ul>
+          <a href="appointment.html?plan=premium" class="block text-center bg-green-600 text-white px-6 py-3 rounded-md font-semibold hover:bg-green-500 transition shadow-lg hover:shadow-xl transform hover:-translate-y-1">Get Started</a>
+        </section>
+      </div>
+
+      <!-- Money-back Guarantee -->
+      <div class="text-center mb-12 bg-white/80 backdrop-blur-sm rounded-lg p-6 shadow-lg">
+        <p class="text-sm text-gray-600">
+          <span class="font-semibold">*</span> Try it risk-free. If you're not satisfied in the first 7 days, we'll refund you — no questions asked.
+        </p>
+      </div>
+
+      <!-- Add-ons Section -->
+      <section class="bg-white/90 backdrop-blur-sm rounded-lg p-8 shadow-lg mb-12">
+        <h3 class="text-xl font-semibold mb-4 text-green-800">Optional Add-ons (for all plans, pay-per-service):</h3>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="p-4 bg-white/80 rounded-lg shadow">
+            <h4 class="font-semibold text-green-700 mb-2">One-time Consultation</h4>
+            <p class="text-gray-700">30-minute session</p>
+            <p class="text-lg font-bold text-green-600 mt-2">$29.99</p>
+          </div>
+          <div class="p-4 bg-white/80 rounded-lg shadow">
+            <h4 class="font-semibold text-green-700 mb-2">Supplement Recommendations</h4>
+            <p class="text-gray-700">Personalized guidance</p>
+            <p class="text-lg font-bold text-green-600 mt-2">$9.99</p>
+          </div>
+          <div class="p-4 bg-white/80 rounded-lg shadow">
+            <h4 class="font-semibold text-green-700 mb-2">Recipe Customization</h4>
+            <p class="text-gray-700">Per recipe modification</p>
+            <p class="text-lg font-bold text-green-600 mt-2">$4.99</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="bg-white/90 backdrop-blur-sm rounded-lg p-8 shadow-lg">
+        <h2 class="text-3xl font-bold text-center mb-8 text-green-800">❓ Got Questions?</h2>
+        <div class="max-w-4xl mx-auto space-y-8">
+          <!-- Initial visible questions -->
+          <div class="space-y-4" id="initial-faqs">
+            <details class="bg-green-50 rounded-lg p-6 hover:shadow-md transition cursor-pointer">
+              <summary class="font-semibold text-green-800">Can I cancel anytime?</summary>
+              <p class="mt-4 text-gray-700">Yes, it's a monthly plan with no commitment.</p>
+            </details>
+            <details class="bg-green-50 rounded-lg p-6 hover:shadow-md transition cursor-pointer">
+              <summary class="font-semibold text-green-800">Is there a refund policy?</summary>
+              <p class="mt-4 text-gray-700">Absolutely! We offer a 7-day satisfaction guarantee on all paid plans. If you're not satisfied within the first 7 days, simply email us and we'll refund your payment — no questions asked.</p>
+              <p class="mt-2 text-sm text-gray-600"><strong>Note:</strong> Refunds are only applicable for first-time users and must be requested within 7 days of the initial payment.</p>
+            </details>
+            <details class="bg-green-50 rounded-lg p-6 hover:shadow-md transition cursor-pointer">
+              <summary class="font-semibold text-green-800">Are plans suitable for allergies/intolerances?</summary>
+              <p class="mt-4 text-gray-700">Absolutely — we personalize for your needs.</p>
+            </details>
+          </div>
+
+          <!-- Hidden questions -->
+          <div class="space-y-4 hidden" id="more-faqs">
+            <details class="bg-green-50 rounded-lg p-6 hover:shadow-md transition cursor-pointer">
+              <summary class="font-semibold text-green-800">What is included in each plan?</summary>
+              <p class="mt-4 text-gray-700">Each plan includes a custom meal guide, nutrition tips, and access to ongoing support depending on the tier.</p>
+            </details>
+            <details class="bg-green-50 rounded-lg p-6 hover:shadow-md transition cursor-pointer">
+              <summary class="font-semibold text-green-800">Do you offer support?</summary>
+              <p class="mt-4 text-gray-700">Basic plans include email support. Standard and Premium include access to a private community and priority support.</p>
+            </details>
+            <details class="bg-green-50 rounded-lg p-6 hover:shadow-md transition cursor-pointer">
+              <summary class="font-semibold text-green-800">What if I need help choosing a plan?</summary>
+              <p class="mt-4 text-gray-700">Reach out anytime — we're here to guide you.</p>
+            </details>
+            <details class="bg-green-50 rounded-lg p-6 hover:shadow-md transition cursor-pointer">
+              <summary class="font-semibold text-green-800">Do you offer a free trial?</summary>
+              <p class="mt-4 text-gray-700">Yes! You can try our "7-Day Wellness Kickstart" for free. No payment required.</p>
+            </details>
+          </div>
+
+          <!-- See more button -->
+          <div class="text-center" id="see-more-btn">
+            <button onclick="toggleMoreFAQs()" class="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-500 transition shadow-lg hover:shadow-xl">
+              See More Questions
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-gray-300 py-6 text-center text-gray-600 text-sm bg-white/90">
+      &copy; 2024 Talk to Sharan. All rights reserved.
+    </footer>
+  </div>
+
+  <script>
+    function toggleMoreFAQs() {
+      const moreFaqs = document.getElementById('more-faqs');
+      const seeMoreBtn = document.getElementById('see-more-btn');
+      moreFaqs.classList.remove('hidden');
+      seeMoreBtn.style.display = 'none';
+    }
+  </script>
+</body>
+</html>

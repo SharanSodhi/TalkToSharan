@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Book Appointment - Talk to Sharan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+    .form-card {
+      transition: transform 0.3s ease;
+    }
+    .form-card:hover {
+      transform: translateY(-5px);
+    }
+    input:focus, select:focus, textarea:focus {
+      box-shadow: 0 0 0 2px rgba(22, 163, 74, 0.2);
+    }
+  </style>
+</head>
+<body>
+  <div class="min-h-screen">
+    <!-- Thank You Popup -->
+    <div id="thankYouPopup" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+      <div class="bg-white p-8 rounded-lg shadow-xl max-w-md text-center">
+        <h3 class="text-2xl font-bold text-green-800 mb-4">Thank You!</h3>
+        <p class="text-gray-700 mb-6">Your appointment request has been received. We'll get back to you within 24 hours to confirm your consultation.</p>
+        <button onclick="hideThankYou()" class="bg-green-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-green-500 transition">Close</button>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header class="bg-white/95 border-b border-gray-300 sticky top-0 z-40">
+      <div class="container mx-auto flex items-center justify-between py-4 px-6">
+        <a href="index.html" class="flex items-center space-x-3">
+          <img src="logo.png" alt="Talk to Sharan Logo" class="h-12 w-auto" />
+          <span class="text-2xl font-semibold text-green-800">Talk to Sharan</span>
+        </a>
+        <nav class="space-x-6 text-lg font-medium">
+          <a href="index.html" class="text-green-800 hover:text-green-600">Home</a>
+          <a href="diet-plans.html" class="text-green-800 hover:text-green-600">Diet Plans</a>
+          <a href="appointment.html" class="text-green-800 font-semibold underline">Book Appointment</a>
+          <a href="about.html" class="text-green-800 hover:text-green-600">About</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="relative py-24 bg-gradient-to-b from-green-50/70 to-white/70">
+      <div class="container mx-auto px-6 max-w-[80%] relative z-10 flex justify-center">
+        <div class="bg-white/95 backdrop-blur-sm p-8 rounded-lg shadow-lg w-full max-w-3xl">
+          <h2 class="text-3xl font-bold mb-6 text-center text-green-800">Ready to Transform Your Health?</h2>
+          <p class="mb-4 text-gray-700 text-center">
+            Whether you're looking for weight management, meal planning, or personalized dietary guidance — you're in the right place.
+          </p>
+          <p class="mb-4 text-gray-700">
+            To help us prepare for your consultation, please include in your message:
+          </p>
+          <ul class="list-disc list-inside mb-4 text-gray-700 space-y-2">
+            <li>Your specific goals (e.g. weight loss, digestive issues, muscle gain)</li>
+            <li>Current dietary habits or restrictions</li>
+            <li>Any medical conditions or allergies we should be aware of</li>
+            <li>Preferred days/times for the appointment</li>
+          </ul>
+          <p class="text-gray-700 text-center font-medium">
+            The more we know, the better we can tailor your consultation to your needs.
+          </p>
+        </div>
+      </div>
+      <div class="absolute inset-0 z-0" style="background-image: url('https://images.unsplash.com/photo-1490818387583-1baba5e638af?auto=format&fit=crop&w=1920'); background-size: cover; background-position: center; opacity: 0.35;"></div>
+    </div>
+
+    <main class="container mx-auto px-6 py-12 max-w-2xl">
+      <!-- Appointment Form -->
+      <h1 class="text-4xl font-extrabold mb-10 text-center text-green-800 bg-white/80 backdrop-blur-sm rounded-lg p-6 shadow-lg">Book an Appointment</h1>
+      
+<form 
+  id="appointmentForm" 
+  class="form-card space-y-6 bg-white/90 backdrop-blur-sm p-8 rounded-lg shadow-lg" 
+  action="https://formsubmit.co/talktosharansodhi@gmail.com" 
+  method="POST" 
+  target="_blank" 
+  onsubmit="showThankYou(); return true;"
+>
+  <!-- Spam protection: honeypot field -->
+  <input type="text" name="_honey" style="display:none">
+
+  <!-- Formsubmit configuration -->
+  <input type="hidden" name="_subject" value="New Appointment Request via Website">
+  <input type="hidden" name="_template" value="table">
+  <input type="hidden" name="_captcha" value="false">
+
+        <div>
+          <label for="name" class="block mb-2 font-semibold text-green-800">Full Name</label>
+          <input type="text" id="name" name="name" required 
+            class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-green-500 bg-white/90" />
+        </div>
+        
+        <div>
+          <label for="email" class="block mb-2 font-semibold text-green-800">Email Address</label>
+          <input type="email" id="email" name="email" required 
+            class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-green-500 bg-white/90" />
+        </div>
+        
+        <div>
+          <label for="phone" class="block mb-2 font-semibold text-green-800">Phone Number</label>
+          <input type="tel" id="phone" name="phone" required 
+            class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-green-500 bg-white/90" />
+        </div>
+        
+        <div>
+          <label for="date" class="block mb-2 font-semibold text-green-800">Preferred Date</label>
+          <input type="date" id="date" name="date" required 
+            class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-green-500 bg-white/90" />
+        </div>
+        
+        <div>
+          <label for="time" class="block mb-2 font-semibold text-green-800">Preferred Time</label>
+          <input type="time" id="time" name="time" required 
+            class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-green-500 bg-white/90" />
+        </div>
+        
+        <div>
+          <label for="plan" class="block mb-2 font-semibold text-green-800">Select Plan</label>
+          <select id="plan" name="plan" required 
+            class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-green-500 bg-white/90">
+            <option value="" disabled selected>Select a plan</option>
+            <option value="free-trial">Free 7-Day Trial - FREE</option>
+            <option value="basic">Basic Plan - $9.99/month</option>
+            <option value="standard">Standard Plan - $17.99/month</option>
+            <option value="premium">Premium Plan - $24.99/month</option>
+          </select>
+        </div>
+        
+        <div>
+          <label for="message" class="block mb-2 font-semibold text-green-800">Additional Message</label>
+          <textarea id="message" name="message" rows="4" 
+            class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-green-500 bg-white/90"></textarea>
+        </div>
+        
+        <button type="submit" 
+          class="w-full bg-green-600 text-white py-3 rounded-md font-semibold hover:bg-green-500 transition shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+          Submit
+        </button>
+      </form>
+
+      <div class="mt-8 bg-white/90 backdrop-blur-sm p-6 rounded-lg shadow-lg text-center">
+        <p class="text-gray-600">Need help? Contact us at:</p>
+        <p class="text-green-800 font-semibold">sharansodhi451@gmail.com</p>
+        <p class="text-green-800 font-semibold">+1 437 878 6664</p>
+      </div>
+    </main>
+
+    <footer class="border-t border-gray-300 py-6 text-center text-gray-600 text-sm bg-white/90">
+      &copy; 2024 Talk to Sharan. All rights reserved.
+    </footer>
+  </div>
+
+  <script>
+    // Function to get URL parameters
+    function getUrlParameter(name) {
+      name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+      var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+      var results = regex.exec(location.search);
+      return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+    }
+
+    // Set selected plan when page loads
+    window.onload = function() {
+      const planSelect = document.getElementById('plan');
+      const selectedPlan = getUrlParameter('plan');
+      if (selectedPlan && planSelect) {
+        planSelect.value = selectedPlan;
+      }
+    }
+
+    function showThankYou() {
+      document.getElementById('thankYouPopup').classList.remove('hidden');
+    }
+    
+    function hideThankYou() {
+      document.getElementById('thankYouPopup').classList.add('hidden');
+      document.getElementById('appointmentForm').reset();
+    }
+  </script>
+</body>
+</html>

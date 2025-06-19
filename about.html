@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About - Talk to Sharan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-image: url('https://images.unsplash.com/photo-1490818387583-1baba5e638af?auto=format&fit=crop&w=1920');
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+    }
+    .overlay {
+      background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.92), rgba(240, 253, 244, 0.95));
+    }
+    .hover-card {
+      transition: all 0.3s ease;
+    }
+    .hover-card:hover {
+      transform: translateY(-5px);
+    }
+    .timeline-item {
+      position: relative;
+      padding-left: 2rem;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.5rem;
+      width: 12px;
+      height: 12px;
+      background: #16a34a;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay min-h-screen">
+    <!-- Header -->
+    <header class="bg-white/95 border-b border-gray-300 sticky top-0 z-50">
+      <div class="container mx-auto flex items-center justify-between py-4 px-6">
+        <a href="index.html" class="flex items-center space-x-3">
+          <img src="logo.png" alt="Talk to Sharan Logo" class="h-12 w-auto" />
+          <span class="text-2xl font-semibold text-green-800">Talk to Sharan</span>
+        </a>
+        <nav class="space-x-6 text-lg font-medium">
+          <a href="index.html" class="text-green-800 hover:text-green-600">Home</a>
+          <a href="diet-plans.html" class="text-green-800 hover:text-green-600">Diet Plans</a>
+          <a href="appointment.html" class="text-green-800 hover:text-green-600">Book Appointment</a>
+          <a href="about.html" class="text-green-800 font-semibold underline">About</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="py-24 bg-green-50/80">
+      <div class="container mx-auto px-6">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+          <div class="text-center md:text-left">
+            <h1 class="text-4xl font-bold mb-4 text-green-800">
+              👩‍⚕️ Sharanjeet Kour Sodhi, NM
+            </h1>
+            <p class="text-xl mb-6 text-green-700 italic">
+              "Empowering Better Health Through Personalized Nutrition"
+            </p>
+            <div class="space-y-2 text-gray-700">
+              <p class="font-semibold">Active Member – Canadian Society of Nutrition Management (CSNM)</p>
+              <p>Toronto, Canada</p>
+              <div class="flex flex-col md:flex-row gap-4 mt-4">
+                <a href="mailto:sharansodhi451@gmail.com" class="text-green-700 hover:text-green-600">
+                  📧 sharansodhi451@gmail.com
+                </a>
+                <span class="text-green-700">📞 +1 437 878 6664</span>
+              </div>
+              <a href="https://www.linkedin.com/in/talktosharansodhi/" target="_blank" class="inline-block text-green-700 hover:text-green-600 mt-2">
+                🔗 LinkedIn Profile »
+              </a>
+            </div>
+          </div>
+          <div class="text-center">
+            <img src="nutritionist.jpeg" alt="Sharanjeet Kour Sodhi" class="rounded-full w-80 h-80 object-cover shadow-lg mx-auto" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Professional Summary -->
+    <section class="py-24 bg-white/90">
+      <div class="container mx-auto px-6">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-3xl font-bold mb-8 text-green-800">💼 About Sharanjeet</h2>
+          <p class="text-lg text-gray-700 leading-relaxed">
+            A Nutrition and Dietetics expert with over 8 years of diverse experience in clinical, bariatric, and community nutrition, Sharanjeet blends science, empathy, and innovation in everything she does. From leading hospital dietetics teams in India to providing personalized support in Canada, her portfolio spans therapeutic care, education, public speaking, and outreach.
+          </p>
+          <p class="text-lg text-gray-700 leading-relaxed mt-6">
+            With a strong foundation in therapeutic nutrition and a passion for holistic health, she continues to make a meaningful impact in both clinical settings and public health awareness.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education & Training -->
+    <section class="py-24 bg-green-50/80">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-16 text-green-800">🎓 Education & Professional Training</h2>
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
+          <!-- Education -->
+          <div class="hover-card bg-white/90 p-8 rounded-xl shadow-lg">
+            <h3 class="text-xl font-semibold mb-6 text-green-800">Education</h3>
+            <div class="space-y-4">
+              <div>
+                <h4 class="font-semibold text-green-700">B.Sc. in Therapeutic Nutrition and Dietetics</h4>
+              </div>
+              <div>
+                <h4 class="font-semibold text-green-700">M.Sc. in Dietetics and Food Service Management (2014–2018)</h4>
+                <p class="text-gray-600 text-sm">▪ Thesis: "Domiciliary Care of Convalescent Patients Irrespective of Their Age"</p>
+              </div>
+              <div>
+                <h4 class="font-semibold text-green-700">Internship at Sir Ganga Ram Hospital, New Delhi (2016–2017)</h4>
+              </div>
+            </div>
+          </div>
+
+          <!-- Certifications -->
+          <div class="hover-card bg-white/90 p-8 rounded-xl shadow-lg">
+            <h3 class="text-xl font-semibold mb-6 text-green-800">Certifications & Courses</h3>
+            <div class="space-y-4">
+              <div>
+                <p class="text-green-700">📜 Certificate in Food and Nutrition – IGNOU (2018)</p>
+              </div>
+              <div>
+                <p class="text-green-700">📌 Bariatric Nutrition Course – Nanavati Hospital (2023)</p>
+              </div>
+              <div>
+                <p class="text-green-700 font-semibold">🧬 ICMR Nutrition Programs (2022):</p>
+                <ul class="text-gray-600 text-sm ml-4 mt-1">
+                  <li>• Immunization</li>
+                  <li>• Food Fortification</li>
+                  <li>• Maternal Health</li>
+                </ul>
+              </div>
+              <div>
+                <p class="text-green-700">🆘 CPR & First Aid | Smart Serve | Health & Safety – 2024</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Timeline -->
+    <section class="py-24 bg-white/90">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-16 text-green-800">🏥 Professional Experience</h2>
+        <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-12">
+          <!-- India Experience -->
+          <div class="hover-card bg-green-50 p-8 rounded-xl">
+            <h3 class="text-xl font-semibold mb-6 text-green-800">India (Sir Ganga Ram Hospital)</h3>
+            <div class="space-y-4">
+              <div class="timeline-item">
+                <h4 class="font-semibold text-green-700">Dietitian – 2017</h4>
+              </div>
+              <div class="timeline-item">
+                <h4 class="font-semibold text-green-700">Head Dietitian – 2018</h4>
+              </div>
+              <div class="timeline-item">
+                <h4 class="font-semibold text-green-700">Head Consultant Dietitian – 2019</h4>
+              </div>
+              <div class="timeline-item">
+                <h4 class="font-semibold text-green-700">Bariatric Nutritionist & Coordinator (IMAS) – 2021</h4>
+              </div>
+            </div>
+          </div>
+
+          <!-- Canada Experience -->
+          <div class="hover-card bg-green-50 p-8 rounded-xl">
+            <h3 class="text-xl font-semibold mb-6 text-green-800">Canada</h3>
+            <div class="space-y-4">
+              <div class="timeline-item">
+                <h4 class="font-semibold text-green-700">Nutritional Consultant – Ambrosia Natural Foods, Toronto (2025)</h4>
+              </div>
+              <div class="timeline-item">
+                <h4 class="font-semibold text-green-700">Administrative Dietitian – Danforth Medical Centre, Scarborough (2024)</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Public Speaking -->
+    <section class="py-24 bg-green-50/80">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-16 text-green-800">🎤 Public Speaking & Community Outreach</h2>
+        <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+          <div class="hover-card bg-white/90 p-6 rounded-xl shadow-lg">
+            <h3 class="font-semibold text-green-800 mb-4">Health Programs</h3>
+            <ul class="space-y-2 text-gray-700 text-sm">
+              <li>• PCOD & Obesity Program – Jesus & Mary College</li>
+              <li>• Gluten-Free Cooking Demo – Celiac Awareness Camp</li>
+              <li>• Gender Sensitization & Women's Nutrition – IAP, Delhi</li>
+            </ul>
+          </div>
+          <div class="hover-card bg-white/90 p-6 rounded-xl shadow-lg">
+            <h3 class="font-semibold text-green-800 mb-4">Festivals & Events</h3>
+            <ul class="space-y-2 text-gray-700 text-sm">
+              <li>• Superfood Millet Festival – National Nutrition Week</li>
+              <li>• Walk & Talk Series – HUNAR HAAT, Connaught Place</li>
+              <li>• Facial Rejuvenation through Diet – Workshops across Delhi</li>
+            </ul>
+          </div>
+          <div class="hover-card bg-white/90 p-6 rounded-xl shadow-lg">
+            <h3 class="font-semibold text-green-800 mb-4">Institutional Lectures</h3>
+            <ul class="space-y-2 text-gray-700 text-sm">
+              <li>• Speaker at Facial Cosmetology Congress, 2018</li>
+              <li>• Lectures at schools (DPS, DAV, Salwan)</li>
+              <li>• NGOs & Government Orgs (Red Cross, Indian Oil, NTPC)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Achievements -->
+    <section class="py-24 bg-white/90">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-16 text-green-800">🏆 Awards & Recognition</h2>
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
+          <div class="hover-card bg-yellow-50 p-8 rounded-xl shadow-lg">
+            <h3 class="font-semibold text-green-800 mb-4">Awards</h3>
+            <ul class="space-y-3 text-gray-700">
+              <li>🏆 National Quality Achievement Award – 2021</li>
+              <li>🏆 Certificate of Appreciation – Cancer Care Foundation</li>
+              <li>🏆 Speaker & Contributor – Multiple CME and Nutrition Symposia</li>
+              <li>🏆 Contributor to "REACHOUT" Bulletins during COVID-19</li>
+            </ul>
+          </div>
+          <div class="hover-card bg-yellow-50 p-8 rounded-xl shadow-lg">
+            <h3 class="font-semibold text-green-800 mb-4">Celebrity Collaborations</h3>
+            <p class="text-gray-700 mb-4">Co-created therapeutic recipes with celebrity chefs:</p>
+            <ul class="space-y-2 text-gray-700">
+              <li>👨‍🍳 Chef Saransh Goila</li>
+              <li>👨‍🍳 Chef Harpal Singh Sokhi</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Media Presence -->
+    <section class="py-24 bg-green-50/80">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-16 text-green-800">📰 In the Media</h2>
+        <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+          <div class="hover-card bg-white/90 p-8 rounded-xl shadow-lg">
+            <h3 class="font-semibold text-green-800 mb-4">Featured Guest</h3>
+            <p class="text-gray-700">Momspresso Hindi: Toddler Nutrition</p>
+          </div>
+          <div class="hover-card bg-white/90 p-8 rounded-xl shadow-lg">
+            <h3 class="font-semibold text-green-800 mb-4">Regular Blogger</h3>
+            <ul class="space-y-2 text-gray-700">
+              <li>• Writer – REACHOUT Circulars</li>
+              <li>• 🔗 Postman News</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Banner -->
+    <section class="bg-green-600 py-12 text-white">
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold mb-4">📬 Let's Connect!</h2>
+        <p class="text-xl mb-8">Interested in consultations, workshops, or media collaboration? Reach out today!</p>
+        <div class="flex justify-center gap-4">
+          <a href="mailto:sharansodhi451@gmail.com" class="bg-white text-green-700 px-6 py-3 rounded-lg font-semibold hover:bg-green-50 transition">
+            📧 Email Sharanjeet
+          </a>
+          <a href="https://www.linkedin.com/in/talktosharansodhi/" target="_blank" class="bg-green-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-800 transition border-2 border-white">
+            🔗 View LinkedIn
+          </a>
+          <a href="appointment.html" class="bg-white text-green-700 px-6 py-3 rounded-lg font-semibold hover:bg-green-50 transition">
+            📄 Request Consultation
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-300 py-6 text-center text-gray-600 text-sm bg-white/90">
+      &copy; 2024 Talk to Sharan. All rights reserved.
+    </footer>
+  </div>
+</body>
+</html>

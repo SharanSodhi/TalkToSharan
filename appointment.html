@@ -76,14 +76,14 @@
     <main class="container mx-auto px-6 py-12 max-w-2xl">
       <!-- Appointment Form -->
       <h1 class="text-4xl font-extrabold mb-10 text-center text-green-800 bg-white/80 backdrop-blur-sm rounded-lg p-6 shadow-lg">Book an Appointment</h1>
+    <form 
+      id="appointmentForm" 
+      class="form-card space-y-6 bg-white/90 backdrop-blur-sm p-8 rounded-lg shadow-lg" 
+      action="https://formsubmit.co/82822ac2467e8b966cdee70bec6315cb" 
+      method="POST" 
+      onsubmit="showThankYou(); return true;"
+    >
       
-<form 
-  id="appointmentForm" 
-  class="form-card space-y-6 bg-white/90 backdrop-blur-sm p-8 rounded-lg shadow-lg" 
-  action="https://formsubmit.co/82822ac2467e8b966cdee70bec6315cb" 
-  method="POST" 
-  onsubmit="showThankYou(); return true;"
->
   <!-- Spam protection: honeypot field -->
   <input type="text" name="_honey" style="display:none">
 

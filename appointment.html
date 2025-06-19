@@ -77,74 +77,67 @@
       <!-- Appointment Form -->
       <h1 class="text-4xl font-extrabold mb-10 text-center text-green-800 bg-white/80 backdrop-blur-sm rounded-lg p-6 shadow-lg">Book an Appointment</h1>
     <form 
-      id="appointmentForm" 
-      class="form-card space-y-6 bg-white/90 backdrop-blur-sm p-8 rounded-lg shadow-lg" 
-      action="https://formsubmit.co/82822ac2467e8b966cdee70bec6315cb" 
-      method="POST" 
-      onsubmit="showThankYou(); return true;"
-    >
-      
+  id="appointmentForm"
+  class="form-card space-y-6 bg-white/90 backdrop-blur-sm p-8 rounded-lg shadow-lg"
+  onsubmit="sendEmail(event);"
+>
   <!-- Spam protection: honeypot field -->
   <input type="text" name="_honey" style="display:none">
 
-  <!-- Formsubmit configuration -->
-  <input type="hidden" name="_subject" value="New Appointment Request via Website">
-  <input type="hidden" name="_template" value="table">
-  <input type="hidden" name="_captcha" value="false">
+  <div>
+    <label for="name" class="block mb-2 font-semibold text-green-800">Full Name</label>
+    <input type="text" id="name" name="name" required 
+      class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-green-500 bg-white/90" />
+  </div>
 
-        <div>
-          <label for="name" class="block mb-2 font-semibold text-green-800">Full Name</label>
-          <input type="text" id="name" name="name" required 
-            class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-green-500 bg-white/90" />
-        </div>
-        
-        <div>
-          <label for="email" class="block mb-2 font-semibold text-green-800">Email Address</label>
-          <input type="email" id="email" name="email" required 
-            class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-green-500 bg-white/90" />
-        </div>
-        
-        <div>
-          <label for="phone" class="block mb-2 font-semibold text-green-800">Phone Number</label>
-          <input type="tel" id="phone" name="phone" required 
-            class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-green-500 bg-white/90" />
-        </div>
-        
-        <div>
-          <label for="date" class="block mb-2 font-semibold text-green-800">Preferred Date</label>
-          <input type="date" id="date" name="date" required 
-            class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-green-500 bg-white/90" />
-        </div>
-        
-        <div>
-          <label for="time" class="block mb-2 font-semibold text-green-800">Preferred Time</label>
-          <input type="time" id="time" name="time" required 
-            class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-green-500 bg-white/90" />
-        </div>
-        
-        <div>
-          <label for="plan" class="block mb-2 font-semibold text-green-800">Select Plan</label>
-          <select id="plan" name="plan" required 
-            class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-green-500 bg-white/90">
-            <option value="" disabled selected>Select a plan</option>
-            <option value="free-trial">Free 7-Day Trial - FREE</option>
-            <option value="basic">Basic Plan - $9.99/month</option>
-            <option value="standard">Standard Plan - $17.99/month</option>
-            <option value="premium">Premium Plan - $24.99/month</option>
-          </select>
-        </div>
-        
-        <div>
-          <label for="message" class="block mb-2 font-semibold text-green-800">Additional Message</label>
-          <textarea id="message" name="message" rows="4" 
-            class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-green-500 bg-white/90"></textarea>
-        </div>
-        
-        <button type="submit" 
-          class="w-full bg-green-600 text-white py-3 rounded-md font-semibold hover:bg-green-500 transition shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-          Submit
-        </button>
-      </form>
+  <div>
+    <label for="email" class="block mb-2 font-semibold text-green-800">Email Address</label>
+    <input type="email" id="email" name="email" required 
+      class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-green-500 bg-white/90" />
+  </div>
+
+  <div>
+    <label for="phone" class="block mb-2 font-semibold text-green-800">Phone Number</label>
+    <input type="tel" id="phone" name="phone" required 
+      class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-green-500 bg-white/90" />
+  </div>
+
+  <div>
+    <label for="date" class="block mb-2 font-semibold text-green-800">Preferred Date</label>
+    <input type="date" id="date" name="date" required 
+      class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-green-500 bg-white/90" />
+  </div>
+
+  <div>
+    <label for="time" class="block mb-2 font-semibold text-green-800">Preferred Time</label>
+    <input type="time" id="time" name="time" required 
+      class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-green-500 bg-white/90" />
+  </div>
+
+  <div>
+    <label for="plan" class="block mb-2 font-semibold text-green-800">Select Plan</label>
+    <select id="plan" name="plan" required 
+      class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-green-500 bg-white/90">
+      <option value="" disabled selected>Select a plan</option>
+      <option value="free-trial">Free 7-Day Trial - FREE</option>
+      <option value="basic">Basic Plan - $9.99/month</option>
+      <option value="standard">Standard Plan - $17.99/month</option>
+      <option value="premium">Premium Plan - $24.99/month</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="message" class="block mb-2 font-semibold text-green-800">Additional Message</label>
+    <textarea id="message" name="message" rows="4" 
+      class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-green-500 bg-white/90"></textarea>
+  </div>
+
+  <button type="submit" 
+    class="w-full bg-green-600 text-white py-3 rounded-md font-semibold hover:bg-green-500 transition shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+    Submit
+  </button>
+</form>
+
 
       <div class="mt-8 bg-white/90 backdrop-blur-sm p-6 rounded-lg shadow-lg text-center">
         <p class="text-gray-600">Need help? Contact us at:</p>
@@ -185,5 +178,29 @@
       document.getElementById('appointmentForm').reset();
     }
   </script>
+
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  
+  <script>
+    (function() {
+      emailjs.init("7aCcNtu_iyB-6ccoQ"); // Replace with your actual Public Key
+    })();
+  
+    function sendEmail(e) {
+      e.preventDefault();
+  
+      emailjs.sendForm('service_29j5gwd', 'template_j0vjomr', '#appointmentForm')
+        .then(function(response) {
+          console.log('SUCCESS!', response.status, response.text);
+          showThankYou(); // This triggers your thank you popup
+          document.getElementById('appointmentForm').reset();
+        }, function(error) {
+          console.log('FAILED...', error);
+          alert("There was an error. Please try again.");
+        });
+    }
+  </script>
+
 </body>
 </html>

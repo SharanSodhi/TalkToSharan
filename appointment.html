@@ -23,6 +23,7 @@
 </head>
 <body>
   <div class="min-h-screen">
+
     <!-- Thank You Popup -->
     <div id="thankYouPopup" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
       <div class="bg-white p-8 rounded-lg shadow-xl max-w-md text-center">
@@ -53,7 +54,9 @@
       <div class="container mx-auto px-6 max-w-[80%] relative z-10 flex justify-center">
         <div class="bg-white/95 backdrop-blur-sm p-8 rounded-lg shadow-lg w-full max-w-3xl">
           <h2 class="text-3xl font-bold mb-6 text-center text-green-800">Ready to Transform Your Health?</h2>
-          <p class="mb-4 text-gray-700 text-center">Whether you're looking for weight management, meal planning, or personalized dietary guidance — you're in the right place.</p>
+          <p class="mb-4 text-gray-700 text-center">
+            Whether you're looking for weight management, meal planning, or personalized dietary guidance — you're in the right place.
+          </p>
           <p class="mb-4 text-gray-700">To help us prepare for your consultation, please include in your message:</p>
           <ul class="list-disc list-inside mb-4 text-gray-700 space-y-2">
             <li>Your specific goals (e.g. weight loss, digestive issues, muscle gain)</li>
@@ -67,5 +70,117 @@
       <div class="absolute inset-0 z-0" style="background-image: url('https://images.unsplash.com/photo-1490818387583-1baba5e638af?auto=format&fit=crop&w=1920'); background-size: cover; background-position: center; opacity: 0.35;"></div>
     </div>
 
+    <!-- Appointment Form -->
     <main class="container mx-auto px-6 py-12 max-w-2xl">
-      <h1 class="text-4xl font-extrabold mb-10 text-center text-green-800 bg-white/80 backdrop-blur-sm rounded-lg p-6 shadow-lg">Book an Appointment</h1
+      <h1 class="text-4xl font-extrabold mb-10 text-center text-green-800 bg-white/80 backdrop-blur-sm rounded-lg p-6 shadow-lg">Book an Appointment</h1>
+
+      <form 
+        id="appointmentForm"
+        class="form-card space-y-6 bg-white/90 backdrop-blur-sm p-8 rounded-lg shadow-lg"
+        onsubmit="sendEmail(event);"
+      >
+        <input type="text" name="_honey" style="display:none">
+
+        <div>
+          <label for="name" class="block mb-2 font-semibold text-green-800">Full Name</label>
+          <input type="text" id="name" name="name" required class="w-full border border-gray-300 rounded-md px-4 py-2 bg-white/90" />
+        </div>
+
+        <div>
+          <label for="email" class="block mb-2 font-semibold text-green-800">Email Address</label>
+          <input type="email" id="email" name="email" required class="w-full border border-gray-300 rounded-md px-4 py-2 bg-white/90" />
+        </div>
+
+        <div>
+          <label for="phone" class="block mb-2 font-semibold text-green-800">Phone Number</label>
+          <input type="tel" id="phone" name="phone" required class="w-full border border-gray-300 rounded-md px-4 py-2 bg-white/90" />
+        </div>
+
+        <div>
+          <label for="date" class="block mb-2 font-semibold text-green-800">Preferred Date</label>
+          <input type="date" id="date" name="date" required class="w-full border border-gray-300 rounded-md px-4 py-2 bg-white/90" />
+        </div>
+
+        <div>
+          <label for="time" class="block mb-2 font-semibold text-green-800">Preferred Time</label>
+          <input type="time" id="time" name="time" required class="w-full border border-gray-300 rounded-md px-4 py-2 bg-white/90" />
+        </div>
+
+        <div>
+          <label for="plan" class="block mb-2 font-semibold text-green-800">Select Plan</label>
+          <select id="plan" name="plan" required class="w-full border border-gray-300 rounded-md px-4 py-2 bg-white/90">
+            <option value="" disabled selected>Select a plan</option>
+            <option value="free-trial">Free 7-Day Trial - FREE</option>
+            <option value="basic">Basic Plan - $9.99/month</option>
+            <option value="standard">Standard Plan - $17.99/month</option>
+            <option value="premium">Premium Plan - $24.99/month</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="message" class="block mb-2 font-semibold text-green-800">Additional Message</label>
+          <textarea id="message" name="message" rows="4" class="w-full border border-gray-300 rounded-md px-4 py-2 bg-white/90"></textarea>
+        </div>
+
+        <button type="submit" class="w-full bg-green-600 text-white py-3 rounded-md font-semibold hover:bg-green-500 transition">
+          Submit
+        </button>
+      </form>
+
+      <div class="mt-8 bg-white/90 backdrop-blur-sm p-6 rounded-lg shadow-lg text-center">
+        <p class="text-gray-600">Need help? Contact us at:</p>
+        <p class="text-green-800 font-semibold">sharansodhi451@gmail.com</p>
+        <p class="text-green-800 font-semibold">+1 437 878 6664</p>
+      </div>
+    </main>
+
+    <footer class="border-t border-gray-300 py-6 text-center text-gray-600 text-sm bg-white/90">
+      &copy; 2024 Talk to Sharan. All rights reserved.
+    </footer>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function() {
+      emailjs.init("7aCcNtu_iyB-6ccoQ"); // Your EmailJS Public Key
+    })();
+
+    function sendEmail(e) {
+      e.preventDefault();
+      emailjs.sendForm('service_hmv7bab', 'template_j0vjomr', '#appointmentForm')
+        .then(function(response) {
+          console.log('SUCCESS!', response.status, response.text);
+          showThankYou();
+        }, function(error) {
+          console.log('FAILED...', error);
+          alert("There was an error. Please try again later.");
+        });
+    }
+
+    function getUrlParameter(name) {
+      name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+      var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+      var results = regex.exec(location.search);
+      return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+    }
+
+    window.onload = function() {
+      const planSelect = document.getElementById('plan');
+      const selectedPlan = getUrlParameter('plan');
+      if (selectedPlan && planSelect) {
+        planSelect.value = selectedPlan;
+      }
+    };
+
+    function showThankYou() {
+      document.getElementById('thankYouPopup').classList.remove('hidden');
+    }
+
+    function hideThankYou() {
+      document.getElementById('thankYouPopup').classList.add('hidden');
+      document.getElementById('appointmentForm').reset();
+    }
+  </script>
+</body>
+</html>
